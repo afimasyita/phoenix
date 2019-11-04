@@ -8,7 +8,8 @@
 	<!-- Load the required dependencies: A-frame and AR.js -->
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-	
+	<!-- import events.js script -->
+    <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
 	<!-- This is to load the A-frame extras, that contain the required components that are used to show the animations -->
 	<!-- of the 3D model of the robot -->
 	<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>	
@@ -34,7 +35,9 @@
 	<!-- depending on your needs. For now just stick with these ones -->
 	
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
-		 
+	<a-assets>
+            <audio id="sound" src="audio.mp3" preload="auto"></audio>
+        </a-assets> 
 		 <!-- Here we load the asset of the robot, pointing to its file. A-frame works with GLTF and GLB models. -->
 		 <!-- We define a name for this asset, that is "robot" -->
 	<a-assets>
@@ -56,7 +59,20 @@
 	    <a-entity sound="src: #sound" autoplay="false"></a-entity>
 		 
 		 <!-- Define the camera of the scene -->
+	    <a-entity sound="src: #sound" autoplay="false"></a-entity>
          <a-entity camera></a-entity> 
     </a-scene>
-	
+	<script>
+AFRAME.registerComponent('soundhandler', {
+    tick: function () {
+           var entity = document.querySelector('[sound]');
+         if (document.querySelector('a-marker').object3D.visible == true) {
+            entity.components.sound.playSound();
+        } else {
+            entity.components.sound.pauseSound();
+        }
+
+     }
+});
+</script>
 </body>
