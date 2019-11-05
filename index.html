@@ -4,10 +4,10 @@
 	
 	<!-- Initialize the viewport -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link href="./build/fraudio.min.css" rel="stylesheet">
+	<!-- <link href="./build/fraudio.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 	</script>
-	<script src="./build/fraudio.min.js"></script>
+	<script src="./build/fraudio.min.js"></script>-->
 
 	<!-- Load the required dependencies: A-frame and AR.js -->
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
@@ -34,9 +34,11 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-	<audio class="fraudio">
-       	<source src="./sound/audio.mp3" type="audio/mpeg">
-	</audio>
+	<div class="col-sm-4 col-sm-offset-4">
+      		<audio controls style="width: 100% max-width:600px;">
+        <source src="./sound/audio.mp3">
+      	</audio>
+    	</div>
 	<!-- a-scene defines the scene that we are agoing to use. After arjs= there are various options that can be customized  -->
 	<!-- depending on your needs. For now just stick with these ones -->
 	
