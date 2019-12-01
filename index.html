@@ -18,7 +18,15 @@
 	camera has been initialized. All the events I tried didn't work, so in the end I resorted using a 3 seconds
 	time-out after the load event. When this problem will be fixed in the AR.js library, this hack won't be necessary
 	anymore ! >.< -->
-	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+    		var scene = document.querySelector('a-scene');
+    			var splash = document.querySelector('#splash');
+    				scene.addEventListener('loaded', function (e) {
+        		splash.style.display = 'none';
+    			});
+		});
+	</script>
 	<!--<script>
 	window.onload = function(){    
 	      setTimeout(function(){
@@ -112,13 +120,5 @@
 	     		}
 		});
 	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-    		var scene = document.querySelector('a-scene');
-    			var splash = document.querySelector('#splash');
-    				scene.addEventListener('loaded', function (e) {
-        		splash.style.display = 'none';
-    			});
-		});
-	</script>
+	
 </body>
