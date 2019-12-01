@@ -40,27 +40,45 @@
 	
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
 	<a-assets>
-            <audio id="sound" src="./sound/audio.mp3" preload="auto"></audio>
+        	<audio id="sound1" src="./sound/audio.mp3" preload="auto"></audio>
+		<audio id="sound2" src="./sound/boombayah.mp3" preload="auto"></audio>
  	</a-assets>
 		 <!-- Here we load the asset of the robot, pointing to its file. A-frame works with GLTF and GLB models. -->
 		 <!-- We define a name for this asset, that is "robot" -->
 	<a-assets>
-		<a-asset-item id="robot" src="./assets/yondaime1.glb"></a-asset-item>
+		<a-asset-item id="robot1" src="./assets/yondaime1.glb"></a-asset-item>
+		<a-asset-item id="robot2" src="./assets/dancing_skeleton.glb"></a-asset-item>
    	</a-assets>
 		 <!-- Defines the marker that we are going to use. Notice that we are not providing the image file, but the  -->
 		 <!-- "compiled" .patt file that we got from the online tool. the marker MUST BE ACCESSIBLE VIA HTTPS -->
 		<a-marker preset='custom' type='pattern' url='./marker-patt/pattern-yondaime.patt'
 			<a-entity 
-				gltf-model="#robot" 
+				gltf-model="#robot1" 
 				position="0 0 0"
 				animation-mixer soundhandler>
 			 </a-entity>
          	</a-marker> 
-		 <!-- Define the camera of the scene -->
 	    	<a-entity 
-		      	sound="src: #sound" 
+		      	sound="src: #sound1" 
 			autoplay="false">
 	    	</a-entity>
+
+	<!--dancing skeleton-->
+		<a-marker preset="custom" type="pattern" url="pattern/dancing_skeleton.patt">
+			  <a-entity
+			      	position="0 0 0"
+			      	gltf-model="#robot2"
+			      	scale="15 15 15"
+				animation-mixer soundhandler>
+			  </a-entity>
+	      
+     		<!--<a-entity sound="src: #sound" autoplay="false"></a-entity>-->
+      		</a-marker>
+		<a-entity 
+		      	sound="src: #sound2" 
+			autoplay="false">
+	    	</a-entity>
+	<!-- Define the camera of the scene -->
          <a-entity camera></a-entity> 
     </a-scene>
 	<script>
