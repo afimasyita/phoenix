@@ -9,6 +9,8 @@
     	<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
 	
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="./js/main.js"></script>
 	<!-- This is to load the A-frame extras, that contain the required components that are used to show the animations -->
 	<!-- of the 3D model of the robot -->
 	<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>	
@@ -28,43 +30,7 @@
 		}, 3000);
 	};	
 	</script>-->	
-	<style type="text/css">
-		#splash {
-		  position: absolute;
-
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-
-		  top: 0;
-		  bottom: 0;
-		  left: 0;
-		  right: 0;
-
-		  width: 200px;
-		  height: 200px;
-
-		  margin: auto;
-		}
-
-		@keyframes spin {
-		  0% {
-		    transform: rotate(0deg);
-		  }
-		  100% {
-		    transform: rotate(360deg);
-		  }
-		}
-
-		.loading {
-		  width: 24px;
-		  height: 24px;
-		  border-radius: 50%;
-		  border: 0.25rem solid rgba(255, 255, 255, 0.2);
-		  border-top-color: white;
-		  animation: spin 1s infinite linear;
-		}
-	</style>
+	
 </head>
 <body style='margin : 0px; overflow: hidden;'>
 	
@@ -72,7 +38,8 @@
 	<!-- ^.^ depending on your needs. For now just stick with these ones ^.^ -->
 
 <div id="splash">
-  <div class="loading"></div>
+      <div class="loading"></div>
+      <div class="start-button">Start</div>
 </div>
 
 	
@@ -112,7 +79,7 @@
 	     		}
 		});
 	</script>
-	<script>
+	<!--<script>
 		document.addEventListener('DOMContentLoaded', function() {
     		var scene = document.querySelector('a-scene');
     			var splash = document.querySelector('#splash');
@@ -120,5 +87,5 @@
         		splash.style.display = 'none';
     			});
 		});
-	</script>
+	</script>-->
 </body>
