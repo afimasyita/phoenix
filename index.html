@@ -53,19 +53,21 @@
 		 <!-- "compiled" .patt file that we got from the online tool. the marker MUST BE ACCESSIBLE VIA HTTPS -->
 		<a-marker preset='custom' type='pattern' url='./marker-patt/pattern-yondaime.patt'>
 			<a-entity 
+				id="animated-model1"
 				gltf-model="#robot1" 
 				position="0 0 0"
 				animation-mixer soundhandler>
 			 </a-entity>
          	</a-marker> 
 	    	<a-entity 
-		      	sound="src: #sound" 
+		      	sound="src: #sound1" 
 			autoplay="false">
 	    	</a-entity>
 
 	<!--dancing skeleton-->
 		<a-marker preset="custom" type="pattern" url="./marker-patt/dancing_skeleton.patt">
 			  <a-entity
+				id="animated-model2"
 			      	position="0 0 0"
 			      	gltf-model="#robot2"
 			      	scale="15 15 15"
@@ -75,9 +77,10 @@
      		<!--<a-entity sound="src: #sound" autoplay="false"></a-entity>-->
       		</a-marker>
 		<a-entity 
-		      	sound="src: #sound" 
+		      	sound="src: #sound2" 
 			autoplay="false">
 	    	</a-entity>
+	    
 	<!-- Define the camera of the scene -->
          <a-entity camera></a-entity> 
     </a-scene>
