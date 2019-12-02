@@ -37,7 +37,7 @@
 	<!-- ^.^ a-scene defines the scene that we are agoing to use. After arjs= there are various options that can be customized  -->
 	<!-- ^.^ depending on your needs. For now just stick with these ones ^.^ -->
 	
-	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+  <a-scene stats embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
 	<a-assets>
         	<audio id="sound" src="./sound/boombayah.mp3" preload="auto"></audio>
  	</a-assets>
@@ -45,7 +45,7 @@
 		 <!-- ^.^ We define a name for this asset, that is "robot" ^.^ -->
 	<a-assets>
 		<a-asset-item id="robot" src="./assets/yondaime1.glb"></a-asset-item>
-   	</a-assets stats>
+   	</a-assets>
 		 <!-- Defines the marker that we are going to use. Notice that we are not providing the image file, but the  -->
 		 <!-- "compiled" .patt file that we got from the online tool. the marker MUST BE ACCESSIBLE VIA HTTPS -->
 	    
